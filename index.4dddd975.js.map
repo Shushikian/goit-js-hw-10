@@ -1,1 +1,0 @@
-{"mappings":"AAIAA,MAAM,8CAA8CC,MAAKC,IAAMC,KAAKD,KAAID,KAAKG,QAAQC,IAAIH","sources":["src/index.js"],"sourcesContent":["import './css/styles.css';\n\nconst DEBOUNCE_DELAY = 300;\n\nfetch('https://restcountries.com/v3.1/name/{name}').then(e => {JSON.e}).then(console.log(e))"],"names":["fetch","then","e","JSON","console","log"],"version":3,"file":"index.4dddd975.js.map"}
