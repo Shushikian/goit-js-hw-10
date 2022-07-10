@@ -12,13 +12,17 @@ const countryInfo = document.querySelector('.country-info');
 
 searchBox.addEventListener('input', debounce(onKlick, DEBOUNCE_DELAY));
 
-function onKlick (res) {
+function onKlick(res) {
     const inputText = res.target.value.trim();
 
     if (inputText === '') {
         return notificationNoname();
     }
-    fetchCountries(inputText).then(htmlMurkUp).catch(console.log(error));
+    fetchCountries(inputText)
+        .then(htmlMurkUp).catch(error => {
+        countryList.innerHTML = '';
+        countryInfo.innerHTML = '';
+      });
 }
 
 function htmlMurkUp(res) {
@@ -59,9 +63,7 @@ function murkUpCountry(argCountry) {
     </ul>`;
 }
 
-function notification() {
-    Notify.failure('Oops, there is no country with that name');
-};
+
 
 
 function notificationNoname() {
